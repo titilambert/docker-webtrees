@@ -1,7 +1,7 @@
 FROM debian:sid
 
-RUN apt-get update && apt-get install -y wget unzip apache2 libapache2-mod-php5 php5-mysql php5-gd mysql-client && rm -rf /var/lib/apt/lists/* && apt-get clean
-RUN wget https://launchpad.net/webtrees/1.7/1.7.8/+download/webtrees-1.7.8.zip && unzip webtrees-1.7.8.zip && mv webtrees /var/www && rm -rf webtrees-1.7.8.zip
+RUN apt-get update && apt-get install -y wget unzip apache2 libapache2-mod-php php-mysql php-gd mysql-client && rm -rf /var/lib/apt/lists/* && apt-get clean
+RUN wget https://launchpad.net/webtrees/1.7/1.7.9/+download/webtrees-1.7.9.zip && unzip webtrees-1.7.9.zip && mv webtrees /var/www && rm -rf webtrees-1.7.9.zip
 
 RUN echo '<VirtualHost *:80>' > /etc/apache2/conf-enabled/webtrees.conf
 RUN echo '  DocumentRoot "/var/www/webtrees"' >> /etc/apache2/conf-enabled/webtrees.conf
